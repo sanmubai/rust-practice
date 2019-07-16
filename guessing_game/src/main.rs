@@ -5,6 +5,7 @@ use rand::Rng;
 fn main() {
     println!("guessing game");
     let randnum=rand::thread_rng().gen_range(1,101);
+    let mut count=1;
     loop{
         println!("please input a number");
         let mut guess=String::new();
@@ -23,5 +24,7 @@ fn main() {
                 break;
             }
         }
+        count=count+1;
     }
+    println!("you guess {} times;",count);
 }

@@ -1,0 +1,10 @@
+[workspace]
+
+members = [
+    "miniGrep",
+    "guess",
+    "guessing_game",
+    "hello",
+    "sl",
+    "struct_rectangle",
+]

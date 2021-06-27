@@ -6,12 +6,13 @@ fn main() {
 
     let args:Vec<String>=env::args().collect();
 
-    let config=Config::new(&args);
-    println!("query {}",config.query);
-    println!("filename {}",config.filename);
+    let config=Config::new(&args).unwrap_or_else(|err|{
+        eprintln!("parse arguments error {}",err);
+        process::exit(1);
+    });
 
     if let Err(e)=minigrep::run(config){
-        println!("Application run error {}",e);
+        eprintln!("Application run error {}",e);
         process::exit(1);
     }
 }

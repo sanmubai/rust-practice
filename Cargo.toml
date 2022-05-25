@@ -6,4 +6,6 @@ members = [
     "guessing_game",
     "sl",
     "struct_rectangle",
+
+    "netb"
 ]
